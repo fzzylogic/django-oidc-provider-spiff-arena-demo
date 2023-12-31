@@ -106,7 +106,7 @@ Launch Docker based on docker-compose.yml config:
   won't work (can confirm GET based logout works on Django 3.2).
   Ref: https://github.com/juanifioren/django-oidc-provider/issues/416
 
-## Resolved Issues
+## Worked around issues
 
 - Spiff-Arena requires 'claims' to include either 'preferred_username',
   'name' or 'given_name' (UserService.getPreferredUsername), however
