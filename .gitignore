@@ -1,0 +1,4 @@
+*env/
+process_models/
+__pycache__/
+*.pyc
