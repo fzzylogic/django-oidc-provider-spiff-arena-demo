@@ -1,0 +1,13 @@
+{% load i18n %}
+
+{% trans "Hello!" %}<br><br>
+
+<a href="{% url 'admin:index' %}">{% trans "Admin - See OPENID CONNECT PROVIDER / Clients" %}</a><br><br>
+
+<a href="//localhost:8001">{% trans "Spiff-Arena" %}</a><br><br>
+
+{# From Django 4.1, logout can only be done using POST, GET is rejected. #}
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">{% trans "Logout" %} {{ user.get_username }}</button>
+</form>

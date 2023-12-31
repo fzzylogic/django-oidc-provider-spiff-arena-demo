@@ -1,0 +1,11 @@
+{% load i18n %}
+
+<form class="form-horizontal" role="form" method="post">
+{% csrf_token %}
+
+<h2>{% trans "Login" %}</h2>
+<p><input type="text" id="username" name="username" placeholder="{% trans "Username" %}" /></p>
+<p><input type="password" id="password" name="password" placeholder="{% trans "Password" %}" /></p>
+<p><button type="submit">{% trans "Login" %}</button></p>
+
+</form>
