@@ -13,7 +13,7 @@ def userinfo(claims, user):
     claims['preferred_username'] = user.username
     # Don't pass an email address, spiff says the account already exists
     # for any address.
-    claims['email'] = None
+    # claims['email'] = None
 
     return claims
 
