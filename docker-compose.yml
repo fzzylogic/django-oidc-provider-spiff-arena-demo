@@ -37,7 +37,9 @@ services:
       # For localhost, use Dockers internal 'host.docker.internal'.
       SPIFFWORKFLOW_BACKEND_OPEN_ID_SERVER_URL: "http://<YOUR_IP>:8010/openid"
 
-      SPIFFWORKFLOW_BACKEND_PERMISSIONS_FILE_NAME: "example.yml"
+      # SPIFFWORKFLOW_BACKEND_PERMISSIONS_FILE_NAME: "example.yml"
+      SPIFFWORKFLOW_BACKEND_PERMISSIONS_FILE_ABSOLUTE_PATH: "/app/permissions/permissions.yml"
+
       SPIFFWORKFLOW_BACKEND_PORT: "${SPIFF_BACKEND_PORT:-8000}"
       SPIFFWORKFLOW_BACKEND_RUN_BACKGROUND_SCHEDULER_IN_CREATE_APP: "true"
       SPIFFWORKFLOW_BACKEND_UPGRADE_DB: "true"
@@ -47,6 +49,7 @@ services:
     volumes:
       - ./process_models:/app/process_models
       - spiffworkflow_backend_db:/app/db_volume
+      - ./permissions:/app/permissions
     healthcheck:
       test: "curl localhost:${SPIFF_BACKEND_PORT:-8000}/v1.0/status --fail"
       interval: 10s
